@@ -1,0 +1,17 @@
+.container{
+  display:flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+
+.my-icons{
+  cursor: pointer;
+}
+
+.bg-success{
+  background-color: greenyellow;
+}
+
+button{
+  margin-left: 90px;
+}

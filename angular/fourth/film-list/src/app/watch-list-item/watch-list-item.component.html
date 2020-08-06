@@ -1,0 +1,31 @@
+
+<div>
+  <h2 class="m-2 text-center">Flopbuster Watch List</h2>
+  <div>
+    <div>
+      <div class="bg-dark text-light p-2 rounded mb-2 container"
+          *ngFor="let item of items | slice:0:show; index as i; last as l">
+       <div [ngClass]="{'bg-success': item.onSale}"
+        class="p-2 rounded">
+        <div>{{item.title | titlecase}}</div>
+      <div>{{item.price | currency: 'USD':'symbol'}} | {{ item.dateAdded | date:'mediumDate'}}
+          <i  *ngIf="i !== 0"
+              class="material-icons float-right my-icons"
+              (click)="onDownSwap(i)">expand_less</i>
+          <i  *ngIf="i !== items.length-1"
+              class="material-icons float-right my-icons"
+              (click)="onUpSwap(i)">expand_more</i>
+      </div>
+       </div>
+    </div>
+    <button
+        class="btn btn-info"
+        (click)="showAll()">{{buttonText}}</button>
+    </div>
+
+  </div>
+
+
+</div>
+
+
